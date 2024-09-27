@@ -7,7 +7,7 @@ from typing import (
     Callable,
     Optional,
     Tuple,
-    # List,  # TODO: for python<3.9 one needs to use `List[]` instead of `list[]`.
+    List,  # TODO: for python<3.9 one needs to use `List[]` instead of `list[]`.
 )
 import math
 import torch
@@ -360,8 +360,8 @@ class BottleneckTransform(nn.Sequential):
         kernel: int,
         stride: int,
         dilation: int,
-        norm_layer: list[Callable[..., nn.Module]],
-        activation_layer: list[Callable[..., nn.Module]],
+        norm_layer: List[Callable[..., nn.Module]],
+        activation_layer: List[Callable[..., nn.Module]],
         group_width: int,
         bottleneck_multiplier: float,
         se_ratio: Optional[float],
@@ -444,8 +444,8 @@ class BottleneckBlock(nn.Module):
         kernel: int,
         stride: int,
         dilation: int,
-        norm_layer: list[Callable[..., nn.Module]],
-        activation_layer: list[Callable[..., nn.Module]],
+        norm_layer: List[Callable[..., nn.Module]],
+        activation_layer: List[Callable[..., nn.Module]],
         group_width: int,
         bottleneck_multiplier: float,
         se_ratio: Optional[float],
@@ -527,8 +527,8 @@ class Stage(nn.Sequential):
         kernel: int,
         stride: int,
         dilation: int,
-        norm_layer: list[Callable[..., nn.Module]],
-        activation_layer: list[Callable[..., nn.Module]],
+        norm_layer: List[Callable[..., nn.Module]],
+        activation_layer: List[Callable[..., nn.Module]],
         group_width: int,
         bottleneck_multiplier: float,
         se_ratio: Optional[float],
